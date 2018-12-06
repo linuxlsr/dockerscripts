@@ -23,3 +23,4 @@ RUN service httpd start
 run service nagios start
 
 EXPOSE 80
+
