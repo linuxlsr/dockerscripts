@@ -1,11 +1,12 @@
 FROM soops/centosbase
 MAINTAINER soops@ucla.edu
 
+WORKDIR /root
 RUN yum install -y gcc make unzip glibc glibc-common httpd php gd gd-devel perl postfix
-
 RUN wget -O /root/nagioscore.tar.gz https://github.com/NagiosEnterprises/nagioscore/archive/nagios-4.4.1.tar.gz
-RUN tar zxv /root/nagios.tar.gz
-RUN cd /root/nagioscore-nagios-4.4.1
+RUN ls -al
+RUN tar -zxvf /root/nagioscore.tar.gz
+WORKDIR /root/nagioscore-nagios-4.4.1
 RUN ./configure
 RUN make all
 RUN make install-groups-users
