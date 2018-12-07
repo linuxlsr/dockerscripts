@@ -17,11 +17,11 @@ RUN chkconfig --level 2345 httpd on
 RUN make install-commandmode
 RUN make install-config
 RUN make install-webconf
-RUN firewall-cmd --zone=public --add-port=80/tcp
-RUN firewall-cmd --zone=public --add-port=80/tcp --permanent
+#RUN firewall-cmd --zone=public --add-port=80/tcp
+#RUN firewall-cmd --zone=public --add-port=80/tcp --permanent
 # need to run at cli to set up user. htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
-RUN service httpd start
-run service nagios start
+CMD service httpd start
+CMD service nagios start
 
 EXPOSE 80
 
