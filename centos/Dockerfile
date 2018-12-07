@@ -4,7 +4,7 @@ MAINTAINER soops@ucla.edu
 RUN yum update -y
 
 # basic tools to make using docker livable
-RUN yum install -y wget git less netutils net-tools openssh-server openssh-clients initscripts sudo chkconfig tar
+RUN yum install -y man wget git less netutils net-tools openssh-server openssh-clients initscripts sudo chkconfig tar
 
 # add use case specific packages here
 
