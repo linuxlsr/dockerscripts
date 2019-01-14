@@ -48,6 +48,5 @@ RUN make install
 #RUN systemctl start httpd &
 #RUN systemctl start nagios &
 
-
 EXPOSE 80
 
