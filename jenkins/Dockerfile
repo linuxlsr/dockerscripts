@@ -13,7 +13,7 @@ RUN rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
 RUN yum update -y
 RUN yum install -y jenkins 
 #update to latest jenkins
-RUN wget http://updates.jenkins-ci.org/download/war/latest/jenkins.war -O /var/lib/jenkins/jenkins.war
+RUN wget http://updates.jenkins-ci.org/download/war/latest/jenkins.war -O /usr/lib/jenkins/jenkins.war
 
 # install terraform
 WORKDIR /tmp
@@ -32,3 +32,5 @@ RUN usermod -aG docker jenkins
 
 #ENTRYPOINT [ "exec java -jar /usr/lib/jenkins/jenkins.war"]
 #RUN cat /root/.jenkins/secrets/initialAdminPassword
+# notes
+# current jenkins url http://updates.jenkins-ci.org/latest/jenkins.war
