@@ -9,6 +9,9 @@
 *.userosscache
 *.sln.docstates
 
+# specific build to not publish
+mycli/
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 

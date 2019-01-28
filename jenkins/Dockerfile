@@ -28,6 +28,11 @@ RUN yum-config-manager --add-repo https://download.docker.com/linux/centos/docke
 RUN yum update -y
 RUN yum install docker-ce -y
 RUN usermod -aG docker jenkins
+RUN yum install python-pip -y
+RUN pip install awscli --upgrade
+RUN mkdir /root/.aws
+# definite issue here, do not push to github or docker
+COPY /home/soops/.aws/jenkins-credentials /root/.aws/credentials
 
 
 #ENTRYPOINT [ "exec java -jar /usr/lib/jenkins/jenkins.war"]
